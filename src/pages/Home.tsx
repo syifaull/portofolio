@@ -1,12 +1,11 @@
 import { SchoolOutlined } from "@mui/icons-material";
 import {
   Box,
-  Button,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
+  Chip,
   Grid,
   Typography,
 } from "@mui/material";
@@ -48,47 +47,13 @@ const Home = () => {
           iconUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png?20220125121207",
         },
-      ],
-      urlImage: "/cla-face.png",
-    },
-    {
-      name: "CLA",
-      description:
-        "CLA (Corporate Letter Assignment) is an application that manages performance evaluation and bonus calculation by processing company KPIs against preset annual targets, providing accurate and automated achievement summaries.",
-      linkWeb: "https://app.unitedtractors.com/ut-net/login",
-      stack: [
         {
-          name: "React",
-          iconUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png?20220125121207",
+          name: "Redux",
+          iconUrl: "",
         },
-      ],
-      urlImage: "/cla-face.png",
-    },
-    {
-      name: "CLA",
-      description:
-        "CLA (Corporate Letter Assignment) is an application that manages performance evaluation and bonus calculation by processing company KPIs against preset annual targets, providing accurate and automated achievement summaries.",
-      linkWeb: "https://app.unitedtractors.com/ut-net/login",
-      stack: [
         {
-          name: "React",
-          iconUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png?20220125121207",
-        },
-      ],
-      urlImage: "/cla-face.png",
-    },
-    {
-      name: "CLA",
-      description:
-        "CLA (Corporate Letter Assignment) is an application that manages performance evaluation and bonus calculation by processing company KPIs against preset annual targets, providing accurate and automated achievement summaries.",
-      linkWeb: "https://app.unitedtractors.com/ut-net/login",
-      stack: [
-        {
-          name: "React",
-          iconUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png?20220125121207",
+          name: "Material UI",
+          iconUrl: "",
         },
       ],
       urlImage: "/cla-face.png",
@@ -246,7 +211,6 @@ const Home = () => {
                 width: "100%",
                 // display: "flex",
                 justifyContent: "space-between",
-                
               }}
             >
               {projects?.map((item, index) => (
@@ -272,10 +236,9 @@ const Home = () => {
                     </CardContent>
                     <CardActions>
                       {item?.stack?.map((item, index) => (
-                        <Button size="small" key={index}>
-                          <img width="7px" src={item?.iconUrl}></img>
-                          <Grid>{item?.name}</Grid>
-                        </Button>
+                        <>
+                          <Chip key={index} label={item?.name} />
+                        </>
                       ))}
                     </CardActions>
                   </Card>
