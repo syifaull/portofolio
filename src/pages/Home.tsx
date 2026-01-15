@@ -128,6 +128,14 @@ const Home = () => {
     },
   ];
 
+  const stacks = [
+    {
+      name: "React",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+  ];
+
   const listVariants = {
     hidden: {},
     visible: {
@@ -372,6 +380,19 @@ const Home = () => {
                         ))}
                       </CardActions>
                     </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+            <Grid sx={{ pt: "3rem" }}>
+              <Typography>Stacks</Typography>
+              <Grid>
+                {stacks?.map((item, index) => (
+                  <Grid width={55} minHeight={55} key={index}>
+                    <img src={item?.logoUrl} />
+                    <Typography variant="body2" sx={{ textAlign: "center" }}>
+                      {item?.name}
+                    </Typography>
                   </Grid>
                 ))}
               </Grid>
